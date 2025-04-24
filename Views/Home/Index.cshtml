@@ -1,8 +1,24 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Casa de Cambio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h2>Conversión de Moneda</h2>
+
+<form asp-controller="Home" asp-action="ResultadoCambio" method="post">
+    <label>Moneda de Origen:</label>
+    <select name="origen" required>
+        <option value="BRL">Real Brasileño (BRL)</option>
+    </select>
+
+    <label>Moneda de Destino:</label>
+    <select name="destino" required>
+        <option value="PEN">Sol Peruano (PEN)</option>
+    </select>
+
+    <label>Cantidad:</label>
+    <input type="number" name="cantidad" required />
+
+    <br /><br />
+    <button type="submit">Hacer Cambio</button>
+</form>
+
